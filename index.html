@@ -1,40 +1,204 @@
-HTML
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AdWorld - عالم الإعلانات</title>
+<title>AdWorld | عالم الإعلانات</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial;background:#0b1020;color:white}
-header{padding:22px;background:#151d35;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:27px;font-weight:bold;color:#55d6a0}
-.hero{text-align:center;padding:75px 20px}
-h1{font-size:38px}
-p{color:#c5cbe0;line-height:1.8}
-button{background:#16a875;color:white;border:0;padding:15px 28px;border-radius:10px;font-size:17px}
-.card{background:#17213b;margin:20px;padding:25px;border-radius:15px;text-align:center}
-footer{text-align:center;padding:30px;color:#aab2c5}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#080e1b;
+ color:white;
+}
+header{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ padding:20px 8%;
+ background:#111b30;
+ border-bottom:1px solid #26334c;
+}
+.logo{font-size:27px;font-weight:bold;color:#42dfa5}
+nav a{
+ color:white;
+ text-decoration:none;
+ margin:0 10px;
+ font-size:14px;
+}
+.hero{
+ text-align:center;
+ padding:95px 20px;
+ background:linear-gradient(140deg,#102d40,#10152d,#080e1b);
+}
+.hero h1{font-size:45px;margin-bottom:15px}
+.hero h1 span{color:#42dfa5}
+.hero p{color:#bdc9d9;line-height:2}
+.btn{
+ display:inline-block;
+ background:#20bd86;
+ color:#071a16;
+ padding:15px 28px;
+ border-radius:9px;
+ text-decoration:none;
+ font-weight:bold;
+ margin-top:20px;
+}
+section{padding:65px 8%;text-align:center}
+h2{font-size:30px}
+.subtitle{color:#aab7ca;line-height:1.8}
+.cards{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:20px;
+ margin-top:35px;
+}
+.card{
+ background:#121e33;
+ padding:28px;
+ border:1px solid #263650;
+ border-radius:15px;
+}
+.card h3{color:#42dfa5}
+.price{font-size:42px;font-weight:bold;color:#42dfa5}
+.price small{font-size:15px}
+form{
+ max-width:500px;
+ margin:30px auto;
+ text-align:right;
+ background:#121e33;
+ padding:25px;
+ border-radius:15px;
+}
+input,textarea{
+ width:100%;
+ padding:14px;
+ margin:10px 0;
+ background:#080e1b;
+ border:1px solid #34445e;
+ border-radius:8px;
+ color:white;
+ font-size:16px;
+}
+button{
+ width:100%;
+ padding:15px;
+ background:#20bd86;
+ border:0;
+ border-radius:8px;
+ font-size:17px;
+ font-weight:bold;
+ cursor:pointer;
+}
+footer{
+ background:#111b30;
+ text-align:center;
+ padding:30px;
+ color:#aab7ca;
+ line-height:2;
+}
+@media(max-width:600px){
+ header{padding:18px 5%;flex-wrap:wrap;gap:15px}
+ nav a{margin:0 5px;font-size:12px}
+ .hero h1{font-size:32px}
+ section{padding:50px 5%}
+}
 </style>
 </head>
+
 <body>
+
 <header>
-<div class="logo">AdWorld 🌍</div>
-<div>الرئيسية | الإعلانات | من نحن</div>
+ <div class="logo">AdWorld 🌍</div>
+ <nav>
+  <a href="#home">الرئيسية</a>
+  <a href="#services">الخدمات</a>
+  <a href="#prices">الأسعار</a>
+  <a href="#contact">اتصل بنا</a>
+ </nav>
 </header>
-<section class="hero">
-<h1>مرحباً بك في AdWorld</h1>
-<p>منصتك الجديدة للإعلانات الرقمية</p>
-<button onclick="document.getElementById('plans').scrollIntoView()">اكتشف خدماتنا</button>
+
+<div class="hero" id="home">
+ <h1>عالمك الإعلاني يبدأ مع <span>AdWorld</span></h1>
+ <p>
+  منصة إعلانية تهدف إلى مساعدة أصحاب المشاريع
+  على الوصول إلى جمهور أكبر.
+  <br>
+  اجعل مشروعك مرئياً للعالم!
+ </p>
+ <a class="btn" href="#prices">اكتشف عروضنا</a>
+</div>
+
+<section id="services">
+ <h2>خدماتنا</h2>
+ <p class="subtitle">حلول بسيطة للتعريف بمشروعك.</p>
+
+ <div class="cards">
+  <div class="card">
+   <h3>📢 نشر الإعلانات</h3>
+   <p>اعرض مشروعك أمام زوار المنصة.</p>
+  </div>
+
+  <div class="card">
+   <h3>🌍 الوصول للجمهور</h3>
+   <p>ساعد جمهوراً جديداً على اكتشاف خدماتك.</p>
+  </div>
+
+  <div class="card">
+   <h3>💡 مساحة للمشاريع</h3>
+   <p>مكان للتعريف بالأفكار والمبادرات.</p>
+  </div>
+ </div>
 </section>
-<section id="plans" class="card">
-<h2>انشر إعلانك معنا</h2>
-<p>روّج لمشروعك ووصل إلى جمهورك.</p>
-<h1>10$</h1>
-<p>مدة الإعلان: 30 يوماً</p>
-<button onclick="alert('قريباً ستتوفر خدمة نشر الإعلانات')">ابدأ الآن</button>
+
+<section id="prices">
+ <h2>باقات الإعلانات</h2>
+ <div class="cards">
+  <div class="card">
+   <h3>الباقة الأساسية</h3>
+   <div class="price">$10</div>
+   <p>مدة الإعلان: 30 يوماً</p>
+   <a class="btn" href="#contact">اطلب إعلانك</a>
+  </div>
+ </div>
 </section>
-<footer>© 2026 AdWorld - جميع الحقوق محفوظة</footer>
+
+<section id="contact">
+ <h2>اطلب نشر إعلانك</h2>
+ <p class="subtitle">هذا نموذج تجريبي لواجهة طلب الإعلان.</p>
+
+ <form onsubmit="sendRequest(event)">
+  <label>اسم المشروع</label>
+  <input type="text" required placeholder="اسم مشروعك">
+
+  <label>البريد الإلكتروني</label>
+  <input type="email" required placeholder="example@email.com">
+
+  <label>وصف الإعلان</label>
+  <textarea rows="4" required placeholder="اكتب وصف إعلانك"></textarea>
+
+  <button type="submit">إرسال الطلب</button>
+ </form>
+</section>
+
+<footer>
+ <div class="logo">AdWorld 🌍</div>
+ <p>عالم الإعلانات الرقمية</p>
+ © 2026 AdWorld - جميع الحقوق محفوظة
+</footer>
+
+<script>
+function sendRequest(event){
+ event.preventDefault();
+ alert("هذه نسخة تجريبية. لم يتم إرسال الطلب فعلياً.");
+}
+</script>
+
 </body>
 </html>
+
+
+
