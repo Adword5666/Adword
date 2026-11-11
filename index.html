@@ -1,0 +1,40 @@
+HTML
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdWorld - عالم الإعلانات</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:#0b1020;color:white}
+header{padding:22px;background:#151d35;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:27px;font-weight:bold;color:#55d6a0}
+.hero{text-align:center;padding:75px 20px}
+h1{font-size:38px}
+p{color:#c5cbe0;line-height:1.8}
+button{background:#16a875;color:white;border:0;padding:15px 28px;border-radius:10px;font-size:17px}
+.card{background:#17213b;margin:20px;padding:25px;border-radius:15px;text-align:center}
+footer{text-align:center;padding:30px;color:#aab2c5}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">AdWorld 🌍</div>
+<div>الرئيسية | الإعلانات | من نحن</div>
+</header>
+<section class="hero">
+<h1>مرحباً بك في AdWorld</h1>
+<p>منصتك الجديدة للإعلانات الرقمية</p>
+<button onclick="document.getElementById('plans').scrollIntoView()">اكتشف خدماتنا</button>
+</section>
+<section id="plans" class="card">
+<h2>انشر إعلانك معنا</h2>
+<p>روّج لمشروعك ووصل إلى جمهورك.</p>
+<h1>10$</h1>
+<p>مدة الإعلان: 30 يوماً</p>
+<button onclick="alert('قريباً ستتوفر خدمة نشر الإعلانات')">ابدأ الآن</button>
+</section>
+<footer>© 2026 AdWorld - جميع الحقوق محفوظة</footer>
+</body>
+</html>
