@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdWorld | لوحة الإدارة</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#f1f5ff;
+ color:#14264b;
+}
+header{
+ background:#102e70;
+ color:white;
+ padding:25px 18px;
+ text-align:center;
+}
+header h1{margin:0 0 8px}
+main{max-width:850px;margin:25px auto;padding:15px}
+.card{
+ background:white;
+ padding:22px;
+ border-radius:15px;
+ margin-bottom:18px;
+ box-shadow:0 4px 15px #0001;
+}
+.stat{
+ display:inline-block;
+ background:#edf2ff;
+ padding:18px;
+ border-radius:12px;
+ margin:5px;
+ min-width:130px;
+}
+.stat strong{display:block;font-size:25px;color:#1646a0}
+.notice{
+ background:#fff5dc;
+ border-right:4px solid #d69b18;
+ padding:14px;
+ border-radius:8px;
+ line-height:1.7;
+}
+a{color:#1646a0}
+</style>
+</head>
+<body>
+<header>
+<h1>AdWorld</h1>
+<p>لوحة تحكم المدير</p>
+</header>
+
+<main>
+<div class="card">
+<h2>مرحباً بك في لوحة الإدارة 👑</h2>
+<p>هذه الواجهة الخاصة بإدارة منصة AdWorld.</p>
+</div>
+
+<div class="card">
+<h2>الإحصائيات</h2>
+<div class="stat">
+<strong>—</strong>
+الإعلانات
+</div>
+<div class="stat">
+<strong>—</strong>
+المعلنون
+</div>
+<div class="stat">
+<strong>—</strong>
+الزوار
+</div>
+</div>
+
+<div class="card">
+<h2>إدارة المنصة</h2>
+<p>سيتم ربط إدارة الإعلانات والمعلنين بقاعدة بيانات آمنة.</p>
+</div>
+
+<div class="notice">
+<strong>تنبيه أمني:</strong>
+هذه واجهة أولية فقط وليست محمية بتسجيل دخول حقيقي بعد.
+لا تضع أي كلمة مرور سرية هنا.
+</div>
+
+<p><a href="index.html">العودة إلى الموقع الرئيسي</a></p>
+</main>
+</body>
+</html>
