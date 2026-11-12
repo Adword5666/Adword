@@ -5,207 +5,346 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AdWorld | عالم الإعلانات</title>
-
 <style>
+:root{
+  --blue:#1746a2;
+  --dark:#102b59;
+  --gold:#e9b949;
+  --bg:#f3f6fc;
+  --white:#fff;
+  --text:#18243a;
+  --muted:#6b7890;
+}
 *{box-sizing:border-box}
 body{
- margin:0;
- font-family:Arial,sans-serif;
- background:#080e1b;
- color:white;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
 }
 header{
- display:flex;
- justify-content:space-between;
- align-items:center;
- padding:20px 8%;
- background:#111b30;
- border-bottom:1px solid #26334c;
- flex-wrap:wrap;
- gap:15px;
+  background:linear-gradient(120deg,#102b59,#2459bd);
+  color:white;
+  padding:18px 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:15px;
 }
-.logo{font-size:27px;font-weight:bold;color:#42dfa5}
-nav{display:flex;align-items:center;flex-wrap:wrap;gap:12px}
-nav a{color:white;text-decoration:none;font-size:14px}
-nav a:hover{color:#42dfa5}
-.lang-btn{
- background:#20bd86;color:#071a16;border:0;
- padding:10px 16px;border-radius:8px;
- font-weight:bold;cursor:pointer;
+.logo{font-size:27px;font-weight:bold}
+.logo span{color:var(--gold)}
+button{
+  cursor:pointer;
+  border:0;
+  border-radius:10px;
+  padding:12px 18px;
+  font-weight:bold;
+  font-size:15px;
 }
+.lang{background:white;color:var(--blue)}
 .hero{
- text-align:center;padding:95px 20px;
- background:linear-gradient(140deg,#102d40,#10152d,#080e1b);
+  text-align:center;
+  padding:65px 18px;
+  color:white;
+  background:linear-gradient(130deg,#1746a2,#3978db);
 }
-.hero h1{font-size:45px;margin-bottom:15px}
-.hero h1 span{color:#42dfa5}
-.hero p{color:#bdc9d9;line-height:2}
-.btn{
- display:inline-block;background:#20bd86;color:#071a16;
- padding:15px 28px;border-radius:9px;
- text-decoration:none;font-weight:bold;margin-top:20px;
+.hero h1{font-size:36px;margin:0 0 15px}
+.hero p{font-size:18px;line-height:1.8}
+.hero button{background:var(--gold);color:#172b4d;margin:8px}
+main{max-width:1100px;margin:35px auto;padding:0 16px}
+.tabs{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:28px;
 }
-section{padding:65px 8%;text-align:center}
-h2{font-size:30px}
-.subtitle{color:#aab7ca;line-height:1.8}
-.cards{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:20px;margin-top:35px;
+.tabs button{background:white;color:var(--blue);border:1px solid #dce4f2}
+.tabs button.active{background:var(--blue);color:white}
+.panel{
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 5px 22px #183b7010;
+  margin-bottom:25px;
 }
-.card{
- background:#121e33;padding:28px;
- border:1px solid #263650;border-radius:15px;
+h2{color:var(--dark)}
+input,textarea,select{
+  width:100%;
+  padding:14px;
+  border:1px solid #d7dfec;
+  border-radius:10px;
+  margin:8px 0 16px;
+  font-size:15px;
+  font-family:inherit;
 }
-.card h3{color:#42dfa5}
-.price{font-size:42px;font-weight:bold;color:#42dfa5}
-form{
- max-width:500px;margin:30px auto;
- text-align:start;background:#121e33;
- padding:25px;border-radius:15px;
+textarea{min-height:100px;resize:vertical}
+label{font-weight:bold;color:var(--dark)}
+.primary{background:var(--blue);color:white}
+.gold{background:var(--gold);color:#172b4d}
+.search{max-width:500px;margin:0 auto 20px;display:block}
+.ads{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px;
 }
-input,textarea{
- width:100%;padding:14px;margin:10px 0;
- background:#080e1b;border:1px solid #34445e;
- border-radius:8px;color:white;font-size:16px;
+.ad{
+  background:white;
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 4px 16px #183b7010;
+  border-top:4px solid var(--gold);
 }
-.submit-btn{
- width:100%;padding:15px;background:#20bd86;
- border:0;border-radius:8px;font-size:17px;
- font-weight:bold;cursor:pointer;
+.ad h3{color:var(--blue);margin-top:0}
+.ad p{line-height:1.7;overflow-wrap:anywhere}
+.price{font-weight:bold;color:#b17b0c;font-size:19px}
+.contact{
+  display:inline-block;
+  background:#168c50;
+  color:white;
+  padding:11px 15px;
+  border-radius:9px;
+  text-decoration:none;
+  margin-top:8px;
 }
+.empty{text-align:center;color:var(--muted);padding:25px}
+.hidden{display:none}
 footer{
- background:#111b30;text-align:center;
- padding:30px;color:#aab7ca;line-height:2;
+  text-align:center;
+  background:#102b59;
+  color:white;
+  padding:25px;
+  margin-top:55px;
 }
-@media(max-width:600px){
- header{padding:18px 5%}
- nav a{font-size:12px}
- .hero h1{font-size:32px}
- section{padding:50px 5%}
-}
+.note{color:var(--muted);font-size:13px;line-height:1.7}
 </style>
 </head>
-
 <body>
 
 <header>
- <div class="logo">AdWorld 🌍</div>
- <nav>
-  <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-  <a href="#services" data-ar="الخدمات" data-en="Services">الخدمات</a>
-  <a href="#prices" data-ar="الأسعار" data-en="Pricing">الأسعار</a>
-  <a href="#contact" data-ar="اتصل بنا" data-en="Contact">اتصل بنا</a>
-  <button class="lang-btn" id="languageButton" onclick="toggleLanguage()">English</button>
- </nav>
+  <div class="logo">Ad<span>World</span></div>
+  <button class="lang" onclick="toggleLanguage()">English / العربية</button>
 </header>
 
-<div class="hero" id="home">
- <h1>
-  <span data-ar="عالمك الإعلاني يبدأ مع" data-en="Your advertising world starts with">عالمك الإعلاني يبدأ مع</span>
-  <span>AdWorld</span>
- </h1>
- <p data-ar="منصة إعلانية تهدف إلى مساعدة أصحاب المشاريع على الوصول إلى جمهور أكبر."
- data-en="An advertising platform designed to help businesses reach a wider audience.">
- منصة إعلانية تهدف إلى مساعدة أصحاب المشاريع على الوصول إلى جمهور أكبر.
- </p>
- <p data-ar="اجعل مشروعك مرئياً للعالم!" data-en="Make your business visible to the world!">
- اجعل مشروعك مرئياً للعالم!
- </p>
- <a class="btn" href="#prices" data-ar="اكتشف عروضنا" data-en="Explore Our Offers">اكتشف عروضنا</a>
-</div>
-
-<section id="services">
- <h2 data-ar="خدماتنا" data-en="Our Services">خدماتنا</h2>
- <p class="subtitle" data-ar="حلول بسيطة للتعريف بمشروعك." data-en="Simple solutions to promote your business.">
- حلول بسيطة للتعريف بمشروعك.
- </p>
- <div class="cards">
-  <div class="card">
-   <h3 data-ar="📢 نشر الإعلانات" data-en="📢 Advertising">📢 نشر الإعلانات</h3>
-   <p data-ar="اعرض مشروعك أمام زوار المنصة." data-en="Showcase your business to platform visitors.">اعرض مشروعك أمام زوار المنصة.</p>
-  </div>
-  <div class="card">
-   <h3 data-ar="🌍 الوصول للجمهور" data-en="🌍 Reach an Audience">🌍 الوصول للجمهور</h3>
-   <p data-ar="ساعد جمهوراً جديداً على اكتشاف خدماتك." data-en="Help new audiences discover your services.">ساعد جمهوراً جديداً على اكتشاف خدماتك.</p>
-  </div>
-  <div class="card">
-   <h3 data-ar="💡 مساحة للمشاريع" data-en="💡 Space for Projects">💡 مساحة للمشاريع</h3>
-   <p data-ar="مكان للتعريف بالأفكار والمبادرات." data-en="A place to introduce ideas and initiatives.">مكان للتعريف بالأفكار والمبادرات.</p>
-  </div>
- </div>
+<section class="hero">
+  <h1 id="heroTitle">مرحباً بك في AdWorld</h1>
+  <p id="heroText">منصتك لاكتشاف الإعلانات والتواصل مع المعلنين بسهولة.</p>
+  <button onclick="showTab('customer')" id="heroCustomer">أنا زبون</button>
+  <button onclick="showTab('advertiser')" id="heroAdvertiser">أنا معلن</button>
 </section>
 
-<section id="prices">
- <h2 data-ar="باقات الإعلانات" data-en="Advertising Plans">باقات الإعلانات</h2>
- <div class="cards">
-  <div class="card">
-   <h3 data-ar="الباقة الأساسية" data-en="Basic Plan">الباقة الأساسية</h3>
-   <div class="price">$10</div>
-   <p data-ar="مدة الإعلان: 30 يوماً" data-en="Ad duration: 30 days">مدة الإعلان: 30 يوماً</p>
-   <a class="btn" href="#contact" data-ar="اطلب إعلانك" data-en="Order Your Ad">اطلب إعلانك</a>
+<main>
+  <div class="tabs">
+    <button id="customerTab" class="active" onclick="showTab('customer')">أنا زبون</button>
+    <button id="advertiserTab" onclick="showTab('advertiser')">أنا معلن</button>
   </div>
- </div>
-</section>
 
-<section id="contact">
- <h2 data-ar="اطلب نشر إعلانك" data-en="Request an Advertisement">اطلب نشر إعلانك</h2>
- <p class="subtitle" data-ar="هذا نموذج تجريبي لواجهة طلب الإعلان." data-en="This is a demo advertisement request form.">
- هذا نموذج تجريبي لواجهة طلب الإعلان.
- </p>
- <form onsubmit="sendRequest(event)">
-  <label data-ar="اسم المشروع" data-en="Business Name">اسم المشروع</label>
-  <input type="text" required data-placeholder-ar="اسم مشروعك" data-placeholder-en="Your business name" placeholder="اسم مشروعك">
+  <section id="customerPanel" class="panel">
+    <h2 id="adsTitle">اكتشف الإعلانات</h2>
+    <input class="search" id="searchInput" placeholder="ابحث عن إعلان..." oninput="renderAds()">
+    <div class="ads" id="adsList"></div>
+  </section>
 
-  <label data-ar="البريد الإلكتروني" data-en="Email Address">البريد الإلكتروني</label>
-  <input type="email" required placeholder="example@email.com">
+  <section id="advertiserPanel" class="panel hidden">
+    <h2 id="formTitle">أضف إعلانك الجديد</h2>
+    <form id="adForm">
+      <label id="nameLabel" for="advertiserName">اسم المعلن</label>
+      <input id="advertiserName" required maxlength="60" placeholder="اسمك أو اسم شركتك">
 
-  <label data-ar="وصف الإعلان" data-en="Advertisement Description">وصف الإعلان</label>
-  <textarea rows="4" required data-placeholder-ar="اكتب وصف إعلانك" data-placeholder-en="Describe your advertisement" placeholder="اكتب وصف إعلانك"></textarea>
+      <label id="titleLabel" for="adTitle">عنوان الإعلان</label>
+      <input id="adTitle" required maxlength="80" placeholder="مثلاً: هاتف للبيع">
 
-  <button class="submit-btn" type="submit" data-ar="إرسال الطلب" data-en="Submit Request">إرسال الطلب</button>
- </form>
-</section>
+      <label id="descLabel" for="adDescription">وصف الإعلان</label>
+      <textarea id="adDescription" required maxlength="600" placeholder="اكتب تفاصيل إعلانك..."></textarea>
+
+      <label id="priceLabel" for="adPrice">السعر</label>
+      <input id="adPrice" maxlength="40" placeholder="مثلاً: 1500 درهم">
+
+      <label id="phoneLabel" for="adPhone">رقم WhatsApp مع رمز الدولة</label>
+      <input id="adPhone" required type="tel" maxlength="20" placeholder="مثلاً: 212600000000">
+
+      <button class="primary" type="submit" id="publishButton">نشر الإعلان</button>
+    </form>
+    <p class="note" id="privacyNote">استخدم رقم عمل مخصصاً وبموافقة ولي أمرك، ولا تنشر رقمك الشخصي. تجنب مشاركة معلوماتك الخاصة مع الغرباء.</p>
+  </section>
+</main>
 
 <footer>
- <div class="logo">AdWorld 🌍</div>
- <p data-ar="عالم الإعلانات الرقمية" data-en="The World of Digital Advertising">عالم الإعلانات الرقمية</p>
- <p data-ar="© 2026 AdWorld - جميع الحقوق محفوظة" data-en="© 2026 AdWorld - All Rights Reserved">© 2026 AdWorld - جميع الحقوق محفوظة</p>
+  <div>AdWorld © 2026</div>
+  <p id="footerText">عالم الإعلانات، يجمع الزبائن والمعلنين.</p>
 </footer>
 
 <script>
-let currentLanguage="ar";
+let language = "ar";
+let ads = [];
 
-function setLanguage(language){
- currentLanguage=language;
- document.documentElement.lang=language;
- document.documentElement.dir=language==="ar"?"rtl":"ltr";
+try {
+  const saved = JSON.parse(localStorage.getItem("adworld_ads") || "[]");
+  if (Array.isArray(saved)) ads = saved;
+} catch(e) {
+  ads = [];
+}
 
- document.querySelectorAll("[data-ar][data-en]").forEach(element=>{
-  element.textContent=element.getAttribute("data-"+language);
- });
+const translations = {
+ ar:{
+  heroTitle:"مرحباً بك في AdWorld",
+  heroText:"منصتك لاكتشاف الإعلانات والتواصل مع المعلنين بسهولة.",
+  customer:"أنا زبون", advertiser:"أنا معلن",
+  adsTitle:"اكتشف الإعلانات", search:"ابحث عن إعلان...",
+  formTitle:"أضف إعلانك الجديد",
+  name:"اسم المعلن", title:"عنوان الإعلان",
+  desc:"وصف الإعلان", price:"السعر",
+  phone:"رقم WhatsApp مع رمز الدولة",
+  publish:"نشر الإعلان",
+  privacy:"استخدم رقم عمل مخصصاً وبموافقة ولي أمرك، ولا تنشر رقمك الشخصي. تجنب مشاركة معلوماتك الخاصة مع الغرباء.",
+  contact:"تواصل عبر WhatsApp",
+  empty:"لا توجد إعلانات حالياً. كن أول من ينشر إعلاناً!",
+  footer:"عالم الإعلانات، يجمع الزبائن والمعلنين.",
+  required:"يرجى ملء جميع الحقول المطلوبة.",
+  invalidPhone:"يرجى إدخال رقم WhatsApp صحيح مع رمز الدولة.",
+  success:"تمت إضافة إعلانك على هذا المتصفح!",
+  noPrice:"السعر غير محدد",
+  advertiserName:"المعلن: "
+ },
+ en:{
+  heroTitle:"Welcome to AdWorld",
+  heroText:"Discover advertisements and contact advertisers easily.",
+  customer:"I'm a Customer", advertiser:"I'm an Advertiser",
+  adsTitle:"Explore Advertisements", search:"Search advertisements...",
+  formTitle:"Publish a New Advertisement",
+  name:"Advertiser Name", title:"Advertisement Title",
+  desc:"Description", price:"Price",
+  phone:"WhatsApp Number with Country Code",
+  publish:"Publish Advertisement",
+  privacy:"Use a dedicated business number with your parent or guardian's permission. Do not publish your personal number or share private information with strangers.",
+  contact:"Contact on WhatsApp",
+  empty:"No advertisements yet. Be the first to publish!",
+  footer:"Connecting customers and advertisers.",
+  required:"Please complete the required fields.",
+  invalidPhone:"Please enter a valid WhatsApp number with country code.",
+  success:"Your advertisement was added to this browser!",
+  noPrice:"Price not specified",
+  advertiserName:"Advertiser: "
+ }
+};
 
- document.querySelectorAll("[data-placeholder-ar]").forEach(element=>{
-  element.placeholder=element.getAttribute("data-placeholder-"+language);
- });
-
- document.getElementById("languageButton").textContent=
-  language==="ar"?"English":"العربية";
-
- document.title=language==="ar"?"AdWorld | عالم الإعلانات":"AdWorld | Advertising World";
+function showTab(tab){
+  document.getElementById("customerPanel").classList.toggle("hidden",tab!=="customer");
+  document.getElementById("advertiserPanel").classList.toggle("hidden",tab!=="advertiser");
+  document.getElementById("customerTab").classList.toggle("active",tab==="customer");
+  document.getElementById("advertiserTab").classList.toggle("active",tab==="advertiser");
+  window.scrollTo({top:document.querySelector("main").offsetTop,behavior:"smooth"});
 }
 
 function toggleLanguage(){
- setLanguage(currentLanguage==="ar"?"en":"ar");
+  language = language==="ar" ? "en" : "ar";
+  const t=translations[language];
+  document.documentElement.lang=language;
+  document.documentElement.dir=language==="ar"?"rtl":"ltr";
+  document.getElementById("heroTitle").textContent=t.heroTitle;
+  document.getElementById("heroText").textContent=t.heroText;
+  document.getElementById("heroCustomer").textContent=t.customer;
+  document.getElementById("heroAdvertiser").textContent=t.advertiser;
+  document.getElementById("customerTab").textContent=t.customer;
+  document.getElementById("advertiserTab").textContent=t.advertiser;
+  document.getElementById("adsTitle").textContent=t.adsTitle;
+  document.getElementById("searchInput").placeholder=t.search;
+  document.getElementById("formTitle").textContent=t.formTitle;
+  document.getElementById("nameLabel").textContent=t.name;
+  document.getElementById("titleLabel").textContent=t.title;
+  document.getElementById("descLabel").textContent=t.desc;
+  document.getElementById("priceLabel").textContent=t.price;
+  document.getElementById("phoneLabel").textContent=t.phone;
+  document.getElementById("publishButton").textContent=t.publish;
+  document.getElementById("privacyNote").textContent=t.privacy;
+  document.getElementById("footerText").textContent=t.footer;
+  renderAds();
 }
 
-function sendRequest(event){
- event.preventDefault();
- alert(currentLanguage==="ar"
-  ?"هذه نسخة تجريبية. لم يتم إرسال الطلب فعلياً."
-  :"This is a demo version. Your request has not actually been sent.");
+document.getElementById("adForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  const t=translations[language];
+  const name=document.getElementById("advertiserName").value.trim();
+  const title=document.getElementById("adTitle").value.trim();
+  const description=document.getElementById("adDescription").value.trim();
+  const price=document.getElementById("adPrice").value.trim();
+  const phone=document.getElementById("adPhone").value.replace(/[\s()+-]/g,"");
+
+  if(!name||!title||!description||!phone){
+    alert(t.required);return;
+  }
+  if(!/^\d{8,15}$/.test(phone)){
+    alert(t.invalidPhone);return;
+  }
+
+  ads.unshift({
+    id:Date.now(),
+    name,title,description,price,phone
+  });
+
+  try {
+    localStorage.setItem("adworld_ads",JSON.stringify(ads));
+  } catch(err) {
+    ads.shift();
+    alert("تعذر حفظ الإعلان في هذا المتصفح.");
+    return;
+  }
+
+  this.reset();
+  renderAds();
+  showTab("customer");
+  alert(t.success);
+});
+
+function renderAds(){
+  const list=document.getElementById("adsList");
+  const t=translations[language];
+  const term=document.getElementById("searchInput").value.trim().toLowerCase();
+  list.replaceChildren();
+
+  const filtered=ads.filter(ad=>
+    (ad.title+" "+ad.description+" "+ad.name).toLowerCase().includes(term)
+  );
+
+  if(filtered.length===0){
+    const empty=document.createElement("p");
+    empty.className="empty";
+    empty.textContent=t.empty;
+    list.appendChild(empty);
+    return;
+  }
+
+  filtered.forEach(ad=>{
+    const card=document.createElement("article");
+    card.className="ad";
+
+    const title=document.createElement("h3");
+    title.textContent=ad.title;
+
+    const desc=document.createElement("p");
+    desc.textContent=ad.description;
+
+    const owner=document.createElement("p");
+    owner.textContent=t.advertiserName+ad.name;
+
+    const price=document.createElement("p");
+    price.className="price";
+    price.textContent=ad.price||t.noPrice;
+
+    const link=document.createElement("a");
+    link.className="contact";
+    link.textContent=t.contact;
+    link.href="https://wa.me/"+ad.phone;
+    link.target="_blank";
+    link.rel="noopener noreferrer";
+
+    card.append(title,desc,owner,price,link);
+    list.appendChild(card);
+  });
 }
+
+renderAds();
 </script>
-
 </body>
 </html>
