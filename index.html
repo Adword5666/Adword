@@ -298,13 +298,15 @@ document.getElementById("adForm").addEventListener("submit",function(e){
   }
   if(!/^\d{8,15}$/.test(phone)){
     alert(t.invalidPhone);return;
-  }
+ } 
+
+  const vip=document.getElementById("vipOption").checked;
 
   ads.unshift({
     id:Date.now(),
-    name,title,description,price,phone
+    name,title,description,price,phone,
+    vipUntil: vip ? Date.now()+7*24*60*60*1000 : null
   });
-
   try {
     localStorage.setItem("adworld_ads",JSON.stringify(ads));
   } catch(err) {
