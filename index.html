@@ -351,7 +351,12 @@ function renderAds(){
 card.className=ad.vipUntil && ad.vipUntil>Date.now()
   ? "ad vip-ad"
   : "ad"; 
-
+if(ad.vipUntil && ad.vipUntil>Date.now()){
+  const badge=document.createElement("span");
+  badge.className="vip-badge";
+  badge.textContent="⭐ VIP";
+  card.appendChild(badge);
+}
     const title=document.createElement("h3");
     title.textContent=ad.title;
 
