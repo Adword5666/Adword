@@ -320,20 +320,17 @@ function renderAds(){
   const list=document.getElementById("adsList");
   const t=translations[language];
   const term=document.getElementById("searchInput").value.trim().toLowerCase();
-    .vip-ad{
-  border:2px solid #d4a017;
-  background:linear-gradient(135deg,#fffdf3,#fff);
-  box-shadow:0 5px 20px #d4a01735;
-}
+      list.replaceChildren();
 
-.vip-badge{
-  display:inline-block;
-  background:#d4a017;
-  color:#fff;
-  padding:5px 12px;
-  border-radius:20px;
-  font-weight:bold;
-  margin-bottom:12px;
+  const filtered=ads.filter(ad=>
+    (ad.title+" "+ad.description+" "+ad.name).toLowerCase().includes(term)
+  );
+
+  filtered.sort((a,b)=>{
+    const aVIP=a.vipUntil && a.vipUntil>Date.now();
+    const bVIP=b.vipUntil && b.vipUntil>Date.now();
+    return Number(bVIP)-Number(aVIP);
+  });
 }
 
   if(filtered.length===0){
