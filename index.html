@@ -331,7 +331,7 @@ function renderAds(){
     const bVIP=b.vipUntil && b.vipUntil>Date.now();
     return Number(bVIP)-Number(aVIP);
   });
-}
+
 
   if(filtered.length===0){
     const empty=document.createElement("p");
