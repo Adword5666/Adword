@@ -382,16 +382,17 @@ if(ad.vipUntil && ad.vipUntil>Date.now()){
     price.className="price";
     price.textContent=ad.price||t.noPrice;
 
-    const link=document.createElement("a");
-    link.className="contact";
-    link.textContent=t.contact;
-    link.href="https://wa.me/"+ad.phone;
-    link.target="_blank";
-    link.rel="noopener noreferrer";
+    if(ad.phone && !ad.demo){
+  const link=document.createElement("a");
+  link.className="contact";
+  link.textContent=t.contact;
+  link.href="https://wa.me/"+ad.phone;
+  link.target="_blank";
+  link.rel="noopener noreferrer";
+  card.appendChild(link);
+}
 
-    card.append(title,desc,owner,price,link);
-    list.appendChild(card);
-  });
+card.append(title,desc,owner,price);
 }
 
 renderAds();
