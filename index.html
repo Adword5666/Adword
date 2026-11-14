@@ -379,7 +379,7 @@ if(ad.vipUntil && ad.vipUntil>Date.now()){
   img.className="ad-image";
   img.src=ad.image;
   img.alt=ad.title;
-  img.loading="lazy";
+  img.loading="eager"; 
   card.appendChild(img);
 }
     const title=document.createElement("h3");
