@@ -199,7 +199,18 @@ footer{
 
 <script>
 let language = "ar";
-let ads = [];
+let ads = [const demoAds = [
+  {id:"demo-1",name:"AdWorld",title:"سيارة مستعملة 🚗",description:"إعلان تجريبي لقسم السيارات.",price:"سعر تجريبي",phone:"",vipUntil:null,demo:true},
+  {id:"demo-2",name:"AdWorld",title:"شقة للكراء 🏠",description:"إعلان تجريبي لقسم العقارات.",price:"سعر تجريبي",phone:"",vipUntil:null,demo:true},
+  {id:"demo-3",name:"AdWorld",title:"هاتف ذكي 📱",description:"إعلان تجريبي لقسم الهواتف.",price:"سعر تجريبي",phone:"",vipUntil:null,demo:true},
+  {id:"demo-4",name:"AdWorld",title:"حاسوب محمول 💻",description:"إعلان تجريبي لقسم الحواسيب.",price:"سعر تجريبي",phone:"",vipUntil:null,demo:true},
+  {id:"demo-5",name:"AdWorld",title:"أثاث منزلي 🛋️",description:"إعلان تجريبي لقسم الأثاث.",price:"سعر تجريبي",phone:"",vipUntil:null,demo:true},
+  {id:"demo-6",name:"AdWorld",title:"دراجة هوائية 🚲",description:"إعلان تجريبي لقسم الدراجات.",price:"سعر تجريبي",phone:"",vipUntil:null,demo:true},
+  {id:"demo-7",name:"AdWorld",title:"خدمات التصميم 🎨",description:"إعلان تجريبي لقسم الخدمات.",price:"سعر تجريبي",phone:"",vipUntil:null,demo:true},
+  {id:"demo-8",name:"AdWorld",title:"كتب مدرسية 📚",description:"إعلان تجريبي لقسم الكتب.",price:"سعر تجريبي",phone:"",vipUntil:null,demo:true},
+  {id:"demo-9",name:"AdWorld",title:"ملابس 👕",description:"إعلان تجريبي لقسم الملابس.",price:"سعر تجريبي",phone:"",vipUntil:null,demo:true},
+  {id:"demo-10",name:"AdWorld",title:"أدوات منزلية 🔧",description:"إعلان تجريبي لقسم الأدوات المنزلية.",price:"سعر تجريبي",phone:"",vipUntil:null,demo:true}
+]; 
 
 try {
   const saved = JSON.parse(localStorage.getItem("adworld_ads") || "[]");
