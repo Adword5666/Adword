@@ -374,6 +374,13 @@ if(ad.vipUntil && ad.vipUntil>Date.now()){
   badge.className="vip-badge";
   badge.textContent="⭐ VIP";
   card.appendChild(badge);
+}if(ad.image){
+  const img=document.createElement("img");
+  img.className="ad-image";
+  img.src=ad.image;
+  img.alt=ad.title;
+  img.loading="lazy";
+  card.appendChild(img);
 }
     const title=document.createElement("h3");
     title.textContent=ad.title;
