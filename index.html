@@ -217,7 +217,7 @@ try {
   if (Array.isArray(saved)) ads = saved;
 } catch(e) {
   ads = [];
-}
+}ads = demoAds.concat(ads.filter(ad => !String(ad.id).startsWith("demo-")));
 
 const translations = {
  ar:{
