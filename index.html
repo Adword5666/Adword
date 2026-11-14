@@ -391,7 +391,10 @@ if(ad.vipUntil && ad.vipUntil>Date.now()){
   link.rel="noopener noreferrer";
   card.appendChild(link);
 }
-
+card.append(title,desc,owner,price);
+list.appendChild(card);
+});
+}
 card.append(title,desc,owner,price);
 }
 
