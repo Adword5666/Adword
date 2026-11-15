@@ -320,8 +320,7 @@ document.getElementById("adForm").addEventListener("submit",function(e){
     alert(t.invalidPhone);return;
  } 
   
-  try {
-    localStorage.setItem("adworld_ads",JSON.stringify(ads));
+  
   } catch(err) {
     ads.shift();
     alert("تعذر حفظ الإعلان في هذا المتصفح.");
