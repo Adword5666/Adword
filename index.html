@@ -213,7 +213,7 @@ const demoAds = [
   {id:"demo-1",name:"AdWorld",title:"سيارة مستعملة 🚗",description:"إعلان تجريبي لقسم السيارات.",price:"سعر تجريبي",image:"https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600",phone:"",vipUntil:null,demo:true},
   {id:"demo-2",name:"AdWorld",title:"شقة للكراء 🏠",description:"إعلان تجريبي لقسم العقارات.",price:"سعر تجريبي",image:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",phone:"",vipUntil:null,demo:true},
   {id:"demo-3",name:"AdWorld",title:"هاتف ذكي 📱",description:"إعلان تجريبي لقسم الهواتف.",price:"سعر تجريبي",image:"https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600",phone:"",vipUntil:null,demo:true},
-  {id:"demo-4",name:"AdWorld",title:"حاسوب محمول 💻",description:"إعلان تجريبي لقسم الحواسيب.",price:"سعر تجريبي",image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600",phone:"",vipUntil:null,demo:true},
+  {id:"demo-4",name:"AdWorld",title:"حاسوب محمول 💻",description:"إعلان تجريبي لقسم الحواسيب.",price:"سعر تجريبي",image:"https://images.unsplash.com/photo-1496181133206-80ce9b88a853٠?w=600",phone:"",vipUntil:null,demo:true},
   {id:"demo-5",name:"AdWorld",title:"أثاث منزلي 🛋️",description:"إعلان تجريبي لقسم الأثاث.",price:"سعر تجريبي",image:"https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600",phone:"",vipUntil:null,demo:true},
   {id:"demo-6",name:"AdWorld",title:"دراجة هوائية 🚲",description:"إعلان تجريبي لقسم الدراجات.",price:"سعر تجريبي",image:"https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600",phone:"",vipUntil:null,demo:true},
   {id:"demo-7",name:"AdWorld",title:"خدمات التصميم 🎨",description:"إعلان تجريبي لقسم الخدمات.",price:"سعر تجريبي",image:"https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600",phone:"",vipUntil:null,demo:true},
@@ -343,6 +343,7 @@ document.getElementById("adForm").addEventListener("submit",async function(e){
   showTab("customer");
   alert("تم إرسال إعلانك للمراجعة بنجاح!");
 });
+async function loadAdsFromSupabase(){
   const { data, error } = await supabaseClient
     .from("ads")
     .select("*")
