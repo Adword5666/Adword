@@ -207,7 +207,10 @@ footer{
 <script>const SUPABASE_URL = "ضع_رابط_مشروعك_هنا";
 const SUPABASE_KEY = "ضع_المفتاح_العام_هنا";
 let language = "ar";
-let ads = [];
+let ads = [];const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
 const demoAds = [
   {id:"demo-1",name:"AdWorld",title:"سيارة مستعملة 🚗",description:"إعلان تجريبي لقسم السيارات.",price:"سعر تجريبي",image:"https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600",phone:"",vipUntil:null,demo:true},
   {id:"demo-2",name:"AdWorld",title:"شقة للكراء 🏠",description:"إعلان تجريبي لقسم العقارات.",price:"سعر تجريبي",image:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600",phone:"",vipUntil:null,demo:true},
