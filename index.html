@@ -303,10 +303,9 @@ function toggleLanguage(){
   document.getElementById("footerText").textContent=t.footer;
   renderAds();
 }
-
-document.getElementById("adForm").addEventListener("submit",function(e){
+document.getElementById("adForm").addEventListener("submit",async function(e){
   e.preventDefault();
-  const t=translations[language];
+
   const name=document.getElementById("advertiserName").value.trim();
   const title=document.getElementById("adTitle").value.trim();
   const description=document.getElementById("adDescription").value.trim();
@@ -314,25 +313,36 @@ document.getElementById("adForm").addEventListener("submit",function(e){
   const phone=document.getElementById("adPhone").value.replace(/[\s()+-]/g,"");
 
   if(!name||!title||!description||!phone){
-    alert(t.required);return;
+    alert("يرجى ملء جميع الخانات المطلوبة.");
+    return;
   }
+
   if(!/^\d{8,15}$/.test(phone)){
-    alert(t.invalidPhone);return;
- } 
-  
-  
-  } catch(err) {
-    ads.shift();
-    alert("تعذر حفظ الإعلان في هذا المتصفح.");
+    alert("رقم الهاتف غير صحيح.");
+    return;
+  }
+
+  const {error}=await supabaseClient
+    .from("ads")
+    .insert([{
+      owner:name,
+      title:title,
+      description:description,
+      price:price,
+      phone:phone,
+      status:"pending"
+    }]);
+
+  if(error){
+    console.error(error);
+    alert("تعذر إرسال الإعلان. حاول لاحقًا.");
     return;
   }
 
   this.reset();
-  renderAds();
   showTab("customer");
-  alert(t.success);
+  alert("تم إرسال إعلانك للمراجعة بنجاح!");
 });
-async function loadAdsFromSupabase(){
   const { data, error } = await supabaseClient
     .from("ads")
     .select("*")
