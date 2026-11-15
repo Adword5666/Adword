@@ -342,7 +342,32 @@ document.getElementById("adForm").addEventListener("submit",function(e){
   showTab("customer");
   alert(t.success);
 });
+async function loadAdsFromSupabase(){
+  const { data, error } = await supabaseClient
+    .from("ads")
+    .select("*")
+    .eq("status", "published");
 
+  if(error){
+    console.error("Supabase error:", error);
+    return;
+  }
+
+  if(data){
+    ads = demoAds.concat(data.map(ad => ({
+      id: ad.id,
+      name: ad.owner,
+      title: ad.title,
+      description: ad.description,
+      price: ad.price,
+      phone: ad.phone,
+      image: ad.image_url,
+      vipUntil: null
+    })));
+
+    renderAds();
+  }
+}
 function renderAds(){
   const list=document.getElementById("adsList");
   const t=translations[language];
