@@ -319,7 +319,7 @@ document.getElementById("adForm").addEventListener("submit",function(e){
   if(!/^\d{8,15}$/.test(phone)){
     alert(t.invalidPhone);return;
  } 
-  });
+  
   try {
     localStorage.setItem("adworld_ads",JSON.stringify(ads));
   } catch(err) {
